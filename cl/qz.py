@@ -83,15 +83,16 @@ def save_image(image_url):
     else:
         print(path + ' has already exists!')
 
-
-url = 'http://cl.b8y.xyz/thread0806.php?fid=16&search=&page=2'
-html = get_html_text(url)
-# print(html)
-links = get_item_url(html)
-for link in links:
-    text = get_html_text(link)
-    image_links = get_image_url(text)
-    for image_link in image_links:
-        save_image(image_link)
+for n in range(0,50):
+    url = 'http://cl.b8y.xyz/thread0806.php?fid=16&search=&page=%d' % n
+    n += 1
+    html = get_html_text(url)
+    # print(html)
+    links = get_item_url(html)
+    for link in links:
+        text = get_html_text(link)
+        image_links = get_image_url(text)
+        for image_link in image_links:
+            save_image(image_link)
 
 
