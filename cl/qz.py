@@ -83,7 +83,7 @@ def save_image(image_url):
     else:
         print(path + ' has already exists!')
 
-for n in range(0,50):
+for n in range(2,50):
     url = 'http://cl.b8y.xyz/thread0806.php?fid=16&search=&page=%d' % n
     n += 1
     html = get_html_text(url)
